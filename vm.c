@@ -3,8 +3,6 @@
 #include <stdbool.h>
 #include "vm.h"
 
-/* This bytecode should print 30 */
-char *example = "01010401050FFF";
 
 bool is_opcode(char *buf, char* opcode) {
     if (strcmp(buf, opcode) == 0) {
@@ -47,10 +45,4 @@ void vm_eval(VM *vm, char *bytecode) {
             printf("%d\n", vm->a_register);
         }
     }
-}
-
-int main(int argc, char **argv) {
-    VM vm;
-    vm_eval(&vm, example);
-    return 0;
 }
