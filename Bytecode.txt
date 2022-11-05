@@ -1,0 +1,17 @@
+1. Load byte to A register
+Format: 01 Byte
+Example: Load 0x0F to A register
+    01 0F
+
+2. Add byte to A register
+Format: 04 Byte
+Example: Add 0x01 to A register
+    04 01
+
+3. Multiple byte to A register (Result bigger than 0xFF with be 0xFF)
+Format: 05 Byte
+Example: Multiple 0x02 to A register
+    05 02
+
+4. Print value in A register
+Format: FF
