@@ -8,7 +8,7 @@ Format: 04 Byte
 Example: Add 0x01 to A register
     04 01
 
-3. Multiple byte to A register (Result bigger than 0xFF with be 0xFF)
+3. Multiple byte to A register
 Format: 05 Byte
 Example: Multiple 0x02 to A register
     05 02
