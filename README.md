@@ -6,3 +6,4 @@ I make this language for learning purpose, it's the world's simplest programming
 
 Run `make` to build toyvm executable
 Run `build/toyvm examples/test_vm1.txt` will ouput 30
+Run `build/toyvm examples/test_vm2.txt` will ouput 60
