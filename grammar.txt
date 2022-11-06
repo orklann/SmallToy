@@ -1,0 +1,6 @@
+1. Expression E
+    E = E + T | T
+    T = T * F | F
+    F = (E) | Number
+
+    Note: Number is integer token
