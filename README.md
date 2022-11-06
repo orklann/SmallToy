@@ -6,6 +6,13 @@ I make this language for learning purpose, it's the world's simplest programming
 
 Run `make` to build toyvm executable
 
-Run `build/toyvm examples/test_vm1.vm` will ouput 30\
+Run 
+```bash
+build/toyvm examples/test_vm1.vm
+30
+```
 
-Run `build/toyvm examples/test_vm2.vm` will ouput 60
+```bash
+build/toyvm examples/test_vm2.vm
+60
+```
