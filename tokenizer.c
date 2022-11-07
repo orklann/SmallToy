@@ -4,6 +4,9 @@
 #include "tokenizer.h"
 
 char next_char(Tokenizer *t) {
+    if (t->pos > strlen(t->stream) - 1) {
+        return '\0';
+    }
     char ch = *(t->stream + t->pos);
     t->pos++;
     return ch;
@@ -34,7 +37,7 @@ bool is_digit(char ch) {
 Token next_token(Tokenizer *t) {
     Token token;
     bool parsing_number = false;
-    char value[256] = "";
+    char value[256];
     char ch = next_char(t);
     while (true) {
         if (ch == 0) {
@@ -63,6 +66,12 @@ Token next_token(Tokenizer *t) {
                     digit_str[0] = ch;
                     digit_str[1] = '\0';
                     strcat(value, digit_str);
+                    if (parsing_number && !is_digit(peek_char(t))) {
+                        parsing_number = false;
+                        token.type = TOKEN_NUMBER;
+                        sprintf(token.value, "%s", value);
+                        return token;
+                    }
                     break;
                 case '+':
                     token.type = TOKEN_ADD_OPERATOR;
@@ -89,12 +98,6 @@ Token next_token(Tokenizer *t) {
             }
         }
 
-        if (parsing_number && is_digit(ch)) {
-            parsing_number = false;
-            token.type = TOKEN_NUMBER;
-            sprintf(token.value, "%s", value);
-            return token;
-        }
         ch = next_char(t);
     }
 }
