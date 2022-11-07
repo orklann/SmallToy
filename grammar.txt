@@ -3,4 +3,11 @@
     T = T * F | F
     F = (E) | Number
 
+    Eliminate left-recursion:
+    E = TE'
+    E'= +TE' | e
+    T = FT'
+    T'= *FT' | e
+    F = (E) | Number
+
     Note: Number is integer token
