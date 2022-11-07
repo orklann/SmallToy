@@ -13,6 +13,9 @@ char next_char(Tokenizer *t) {
 }
 
 char peek_char(Tokenizer *t) {
+    if (t->pos > strlen(t->stream) - 1) {
+        return '\0';
+    }
     char ch = *(t->stream + t->pos);
     return ch;
 }
