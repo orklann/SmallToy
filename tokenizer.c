@@ -98,3 +98,10 @@ Token next_token(Tokenizer *t) {
         ch = next_char(t);
     }
 }
+
+Token peek_token(Tokenizer *tokenizer) {
+    unsigned int saved_pos = tokenizer->pos;
+    Token token = next_token(tokenizer);
+    tokenizer->pos = saved_pos;
+    return token;
+}
