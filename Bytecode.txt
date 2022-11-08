@@ -31,5 +31,8 @@ Format: 09
 9. Add B register to A register
 Format: 0A
 
-10. Print value in B register
+10. Multiple B register and A register
+Format: 0B
+
+11. Print value in B register
 Format: FE

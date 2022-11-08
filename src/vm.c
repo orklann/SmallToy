@@ -57,6 +57,8 @@ void vm_eval(VM *vm, char *bytecode) {
             vm->sp--;
         } else if (is_opcode(opcode, "0A")) { // Opcode 0A
             vm->a_register += vm->b_register;
+        } else if (is_opcode(opcode, "0B")) { // Opcode 0B
+            vm->a_register *= vm->b_register;
         } else if (is_opcode(opcode, "FE")) { // Opcode FE
             printf("%d\n", vm->b_register);
         }
