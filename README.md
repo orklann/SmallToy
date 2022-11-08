@@ -4,9 +4,9 @@ I make this language for learning purpose, it's the world's simplest programming
 
 ### How to use
 
-Run `make toy` to build toy executable
+Run `make` to build toy executable
 
-Run 
+Run
 ```bash
 build/toy examples/test_expression2.toy
 27

@@ -1,4 +1,4 @@
-default: toyvm
+default: toy
 CC=gcc
 SRC=src
 
