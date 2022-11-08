@@ -18,8 +18,10 @@ char* to_hex(char *str) {
 
 void emit_code_load_a(char *v) {
     char code[5];
-    sprintf(code, "01%s", to_hex(v));
+    char *hex = to_hex(v);
+    sprintf(code, "01%s", hex);
     strcat(bytecode, code);
+    free(hex);
 }
 
 void emit_code_push_a() {
