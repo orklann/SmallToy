@@ -66,7 +66,7 @@ int parse_expression(Tokenizer *t) {
 int parse_expression2(Tokenizer *t) {
     Token token = peek_token(t);
     if (token.type == TOKEN_ADD_OPERATOR) {
-        printf("+");
+        //printf("+");
         token = next_token(t);
         emit_code_push_a();
 
@@ -108,7 +108,7 @@ int parse_term2(Tokenizer *t) {
     Token token = peek_token(t);
     if (token.type == TOKEN_MUL_OPERATOR) {
         token = next_token(t);
-        printf("*");
+        //printf("*");
         emit_code_push_a();
 
         unsigned int result = parse_factor(t);
@@ -133,15 +133,15 @@ int parse_term2(Tokenizer *t) {
 int parse_factor(Tokenizer *t) {
     Token token = next_token(t);
     if (token.type == TOKEN_LEFT_PARENTHESIS) {
-        printf("(");
+        //printf("(");
         emit_code_push_a();
         unsigned int result = parse_expression(t);
         emit_code_pop_a();
         next_token(t);
-        printf(")");
+        //printf(")");
         return result;
     } else if (token.type == TOKEN_NUMBER) {
-        printf("%s", token.value);
+        //printf("%s", token.value);
         emit_code_push_a();
         emit_code_load_a(token.value);
         emit_code_push_a();
