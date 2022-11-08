@@ -43,6 +43,22 @@ void vm_eval(VM *vm, char *bytecode) {
             vm->a_register *= operand;
         } else if (is_opcode(opcode, "FF")) { // Opcode FF
             printf("%d\n", vm->a_register);
+        } else if (is_opcode(opcode, "06")) { // Opcode 06
+            vm->stack[vm->sp] = vm->a_register;
+            vm->sp++;
+        } else if (is_opcode(opcode, "07")) { // Opcode 07
+            vm->a_register = vm->stack[vm->sp - 1];
+            vm->sp--;
+        } else if (is_opcode(opcode, "08")) { // Opcode 08
+            vm->stack[vm->sp] = vm->b_register;
+            vm->sp++;
+        } else if (is_opcode(opcode, "09")) { // Opcode 09
+            vm->b_register = vm->stack[vm->sp - 1];
+            vm->sp--;
+        } else if (is_opcode(opcode, "0A")) { // Opcode 0A
+            vm->a_register += vm->b_register;
+        } else if (is_opcode(opcode, "FE")) { // Opcode FE
+            printf("%d\n", vm->b_register);
         }
     }
 }

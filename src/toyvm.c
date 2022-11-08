@@ -8,6 +8,7 @@ int main(int argc, char **argv) {
     fclose(f);
     VM vm;
     vm.pc = 0;
+    vm.sp = 0;
     vm_eval(&vm, bytecode);
     return 0;
 }
