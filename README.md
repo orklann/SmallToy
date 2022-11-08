@@ -4,15 +4,15 @@ I make this language for learning purpose, it's the world's simplest programming
 
 ### How to use
 
-Run `make` to build toyvm executable
+Run `make toy` to build toy executable
 
 Run 
 ```bash
-build/toyvm examples/test_vm1.vm
-30
+build/toy examples/test_expression2.toy
+27
 ```
 
 ```bash
-build/toyvm examples/test_vm2.vm
-60
+build/toy examples/test_expression2.toy
+206
 ```
