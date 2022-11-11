@@ -8,7 +8,7 @@ Run `make` to build toy executable
 
 Run
 ```bash
-build/toy examples/test_expression2.toy
+build/toy examples/test_expression.toy
 27
 ```
 
