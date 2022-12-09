@@ -36,3 +36,13 @@ Format: 0B
 
 11. Print value in B register
 Format: FE
+
+12. Jump to offset if A register is zero
+Format 0C OFFSET (OFFSET is bytes after the end of this instruction)
+Example: Jump to offset 02 if A register is zero
+    0C 02
+
+13. Jump to offset if A register is greater than zero
+Format: 0D OFFSET (OFFSET is bytes after the end of this instruction)
+Example: Jump to offset 02 if A register is greater than zero
+    0D 02

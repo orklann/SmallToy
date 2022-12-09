@@ -61,6 +61,16 @@ void vm_eval(VM *vm, char *bytecode) {
             vm->a_register *= vm->b_register;
         } else if (is_opcode(opcode, "FE")) { // Opcode FE
             printf("%d\n", vm->b_register);
+        } else if (is_opcode(opcode, "0C")) { // Opcode 0C
+            unsigned int operand = vm_get_operand(vm, bytecode);
+            if (vm->a_register == 0) {
+                vm->pc += (operand - 1) * 2;
+            }
+        } else if (is_opcode(opcode, "0D")) { // Opcode 0D
+            unsigned int operand = vm_get_operand(vm, bytecode);
+            if (vm->a_register > 0) {
+                vm->pc += (operand - 1) * 2;
+            }
         }
     }
 }
