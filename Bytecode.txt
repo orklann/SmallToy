@@ -46,3 +46,8 @@ Example: Jump to offset 02 if A register is zero
 Format: 0D OFFSET (OFFSET is bytes after the end of this instruction)
 Example: Jump to offset 02 if A register is greater than zero
     0D 02
+
+14. Jump to offset
+Format: 0E OFFSET (OFFSET is bytes after the end of this instruction)
+Example: Jump to offset 03
+    0E 03

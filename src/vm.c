@@ -71,6 +71,9 @@ void vm_eval(VM *vm, char *bytecode) {
             if (vm->a_register > 0) {
                 vm->pc += (operand - 1) * 2;
             }
+        } else if (is_opcode(opcode, "0E")) { // Opcode 0E
+            unsigned int operand = vm_get_operand(vm, bytecode);
+            vm->pc += (operand - 1) * 2;
         }
     }
 }
